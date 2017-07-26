@@ -1,5 +1,6 @@
 # intro
 @import "step/style.css"
+
 + slice a card into pieces and keep the container
 + group a few pieces into one card
 <br>
@@ -27,15 +28,20 @@ Create `<div>` using flexbox.
 
 2. using `~` to link `a:hover&focus` with `card` in css.
 > The general sibling combinator is made of the "tilde" (U+007E, ~) character that separates two sequences of simple selectors. The elements represented by the two sequences share the same parent in the document tree and the element represented by the first sequence precedes (not necessarily immediately) the element represented by the second one.
+
 ```css
 .container a:hover ~ .card, .container a:focus ~ .card{
     opacity: 1;
 }
 ```
 # step 3:
+
 set `transform` for each `a:hover~.card` & `a:focus~.card`.
-    it seems a bit of a mess if you using pure css selector
+
+it seems a bit of a mess if you using pure css selector
+
 @import "step/3.html"
+
 ```css
 .container a:nth-child(1):hover ~.transform{
     transform-origin: right bottom;
@@ -54,10 +60,13 @@ set `transform` for each `a:hover~.card` & `a:focus~.card`.
     transform: rotateX(-10deg) rotateY(-10deg) translateZ(0);
 }
 ```
+
 notice that all hover/focus effects on `<a>`tags **not** on `<div class="card transform">`
+
 > for showing and explaining how HTML & css organized, i use `transform` and `card` two class here. in fact, one is enough.
 
 if you using *scss* or others css language, the selector will be clearer.
+
 ```scss
 .container{
     a{
@@ -79,10 +88,14 @@ if you using *scss* or others css language, the selector will be clearer.
     }
 }
 ```
+
 # step 4
 remove `a` background and add transition,
 
 @import "step/4.html"
 
++ slice container to more pieces can get more smooth effects.
+
 # REF
 https://codepen.io/gabriellewee/post/how-to-create-direction-aware-css-only-hover-effects
+https://codepen.io/gabriellewee/pen/e2bfe2c7c6099275a5f20e4c338042a4

@@ -1,9 +1,316 @@
-<link rel="stylesheet" type="text/css" href="step/style.css">
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>practice</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+      
+
+      
+      
+
+      <style> 
+      /**
+ * atom-dark theme for `prism.js`
+ * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
+ * @author Joe Gibson (@gibsjose)
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #c5c8c6;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #1d1f21;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #7C7C7C;
+}
+
+.token.punctuation {
+	color: #c5c8c6;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.keyword,
+.token.tag {
+    color: #96CBFE;
+}
+
+.token.class-name {
+	color: #FFFFB6;
+	text-decoration: underline;
+}
+
+.token.boolean,
+.token.constant {
+    color: #99CC99;
+}
+
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.number {
+	color: #FF73FD;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #A8FF60;
+}
+
+.token.variable {
+	color: #C6C5FE;
+}
+
+.token.operator {
+    color: #EDEDED;
+}
+
+.token.entity {
+    color: #FFFFB6;
+    /* text-decoration: underline; */
+}
+
+.token.url {
+    color: #96CBFE;
+}
+
+.language-css .token.string,
+.style .token.string {
+	color: #87C38A;
+}
+
+.token.atrule,
+.token.attr-value {
+    color: #F9EE98;
+}
+
+.token.function {
+	color: #DAD085;
+}
+
+.token.regex {
+    color: #E9C062;
+}
+
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;padding:2em;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#0050a3;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:16px;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:normal}}@media screen and (min-width:914px){html body:not([data-presentation-mode]){width:980px;margin:10px auto}}@media screen and (max-width:400px){html body:not([data-presentation-mode]){font-size:14px;margin:0 auto;padding:15px}}html body .pagebreak,html body .newpage{page-break-before:always}html body pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}html body pre.line-numbers>code{position:relative}html body pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}html body pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}html body pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}html body .mathjax-exps .MathJax_Display{text-align:center !important}html body:not([for="preview"]) .code-chunk .btn-group{display:none}html body:not([for="preview"]) .code-chunk .status{display:none} 
+       
+      </style>
+    </head>
+    <body class="mume   ">
+    <h1 class="mume-header" id="intro">intro</h1>
+
+<link rel="stylesheet" href="step\style.css">
+<ul>
+<li>slice a card into pieces and keep the container</li>
+<li>group a few pieces into one card<br>
+<br></li>
+<li>create part-response element</li>
+</ul>
+<h1 class="mume-header" id="step-1">step 1</h1>
+
+<div><link rel="stylesheet" type="text/css" href="style.css">
+<div class="container">
+    <a href="">↖</a>
+    <a href="">↗</a>
+    <a href="">↙</a>
+    <a href="">↘</a>
+</div>
+</div>  
+<p>Create <code>&lt;div&gt;</code> using flexbox.</p>
+<h1 class="mume-header" id="step-2">step 2</h1>
+
+<div><link rel="stylesheet" type="text/css" href="style.css">
+<div class="container">
+    <a href="">↖</a>
+    <a href="">↗</a>
+    <a href="">↙</a>
+    <a href="">↘</a>
+    <div class="card">Card
+    </div>
+</div>
+</div>  
+<ol>
+<li>create <code>div .card</code> after your <code>&lt;a&gt;</code> tags.
+<ul>
+<li>the html now look like this:</li>
+</ul>
+</li>
+</ol>
+<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>card<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</pre>
+<ol start="2">
+<li>using <code>~</code> to link <code>a:hover&amp;focus</code> with <code>card</code> in css.</li>
+</ol>
+<blockquote>
+<p>The general sibling combinator is made of the &quot;tilde&quot; (U+007E, ~) character that separates two sequences of simple selectors. The elements represented by the two sequences share the same parent in the document tree and the element represented by the first sequence precedes (not necessarily immediately) the element represented by the second one.</p>
+</blockquote>
+<pre class="language-css"><span class="token selector"><span class="token class">.container</span> a<span class="token pseudo-class">:hover</span> ~ <span class="token class">.card</span>, <span class="token class">.container</span> a<span class="token pseudo-class">:focus</span> ~ <span class="token class">.card</span></span><span class="token punctuation">{</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+<h1 class="mume-header" id="step-3">step 3:</h1>
+
+<p>set <code>transform</code> for each <code>a:hover~.card</code> &amp; <code>a:focus~.card</code>.</p>
+<p>it seems a bit of a mess if you using pure css selector</p>
+<div><link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="transform.css">
+<div class="container">
+    <a href="">↖</a>
+    <a href="">↗</a>
+    <a href="">↙</a>
+    <a href="">↘</a>
+    <div class="card transform">Card
+    </div>
+</div>
+</div>  
+<pre class="language-css"><span class="token selector"><span class="token class">.container</span> a<span class="token pseudo-class">:nth-child(1)</span><span class="token pseudo-class">:hover</span> ~<span class="token class">.transform</span></span><span class="token punctuation">{</span>
+    <span class="token property">transform-origin</span><span class="token punctuation">:</span> right bottom<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span><span class="token number">10</span>deg<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>-<span class="token number">10</span>deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.container</span> a<span class="token pseudo-class">:nth-child(2)</span><span class="token pseudo-class">:hover</span> ~<span class="token class">.transform</span></span><span class="token punctuation">{</span>
+    <span class="token property">transform-origin</span><span class="token punctuation">:</span> left bottom<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span><span class="token number">10</span>deg<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span><span class="token number">10</span>deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.container</span> a<span class="token pseudo-class">:nth-child(3)</span><span class="token pseudo-class">:hover</span> ~<span class="token class">.transform</span></span><span class="token punctuation">{</span>
+    <span class="token property">transform-origin</span><span class="token punctuation">:</span> left top<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>-<span class="token number">10</span>deg<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span><span class="token number">10</span>deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.container</span> a<span class="token pseudo-class">:nth-child(4)</span><span class="token pseudo-class">:hover</span> ~<span class="token class">.transform</span></span><span class="token punctuation">{</span>
+    <span class="token property">transform-origin</span><span class="token punctuation">:</span> right top<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateX</span><span class="token punctuation">(</span>-<span class="token number">10</span>deg<span class="token punctuation">)</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>-<span class="token number">10</span>deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+<p>notice that all hover/focus effects on <code>&lt;a&gt;</code>tags <strong>not</strong> on <code>&lt;div class=&quot;card transform&quot;&gt;</code></p>
+<blockquote>
+<p>for showing and explaining how HTML &amp; css organized, i use <code>transform</code> and <code>card</code> two class here. in fact, one is enough.</p>
+</blockquote>
+<p>if you using <em>scss</em> or others css language, the selector will be clearer.</p>
+<pre class="language-scss"><span class="token selector">.container</span><span class="token punctuation">{</span>
+    <span class="token selector">a</span><span class="token punctuation">{</span>
+        <span class="token selector"><span class="token parent important">&amp;</span>:hover,<span class="token parent important">&amp;</span>:focus</span><span class="token punctuation">{</span>
+            <span class="token selector">~ .transform</span><span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// set common effects here</span>
+                <span class="token number">....</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        &amp;<span class="token punctuation">:</span><span class="token function">nth-child</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token selector">...
+            <span class="token parent important">&amp;</span>:hover,<span class="token parent important">&amp;</span>:focus</span><span class="token punctuation">{</span>
+                <span class="token selector">~ .transform</span><span class="token punctuation">{</span>
+                    <span class="token comment" spellcheck="true">// set spec effects here</span>
+                    <span class="token number">....</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre>
+<h1 class="mume-header" id="step-4">step 4</h1>
+
+<p>remove <code>a</code> background and add transition,</p>
+<div><link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="transform.css">
 <div class="container clear">
-    <a></a>
-    <a></a>
-    <a></a>
-    <a></a>
+    <a href="">↖</a>
+    <a href="">↗</a>
+    <a href="">↙</a>
+    <a href="">↘</a>
     <div class="card transform transition">Card
     </div>
 </div>
+</div>  
+<ul>
+<li>slice container to more pieces can get more smooth effects.</li>
+</ul>
+<h1 class="mume-header" id="ref">REF</h1>
+
+<p><a href="https://codepen.io/gabriellewee/post/how-to-create-direction-aware-css-only-hover-effects">https://codepen.io/gabriellewee/post/how-to-create-direction-aware-css-only-hover-effects</a><br>
+<a href="https://codepen.io/gabriellewee/pen/e2bfe2c7c6099275a5f20e4c338042a4">https://codepen.io/gabriellewee/pen/e2bfe2c7c6099275a5f20e4c338042a4</a></p>
+
+    </body>
+    
+    <script>
+(function bindTaskListEvent() {
+  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
+  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
+    var checkbox = taskListItemCheckboxes[i]
+    var li = checkbox.parentElement
+    if (li.tagName !== 'LI') li = li.parentElement
+    if (li.tagName === 'LI') {
+      li.classList.add('task-list-item')
+    }
+  }
+}())    
+</script>
+  </html>
