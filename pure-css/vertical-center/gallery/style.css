@@ -1,0 +1,87 @@
+.wrapper{
+    padding: 10px;
+    background: #66BB6A;
+    height: 500px;
+    width: 100%;
+}
+
+.center{
+    padding: 10px;
+    background: #81C784;
+}
+
+.content{
+    padding: 10px;
+    background: #A5D6A7;
+}
+
+/** for table (table.html) **/
+.table-wrapper{
+    table-layout: auto;
+}
+.table-center{
+    height: 33%;
+}
+
+/** for table-cell (table-cell.html) **/
+.table-cell-wrapper{
+    display: table;
+}
+
+.table-cell-center{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/** for absolute (absolute.html) **/
+.absolute-wrapper{
+    position: relative;
+}
+
+.absolute-content{
+    position: absolute;
+    top:50%;
+    height: 300px;
+    margin-top: -150px; /*half of height*/
+}
+/** for relative (relative.html) **/
+.relative-wrapper{
+    position: relative;
+}
+.relative-placeholder{
+    float: left;
+    height: 50%;
+    width: 100%;
+    margin-bottom: -100px; /* height of center */
+}
+.relative-center{
+    clear: both;
+    height: 200px;
+    position: relative;
+}
+/** for relative-absolute **/
+.relative-absolute-wrapper{
+    position: relative;
+}
+.relative-absolute-content{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 240px;
+    width: 70%;
+}
+
+/** for flexbox (flexbox.html) **/
+.flexbox-wrapper{
+    display: flex;
+    align-items: center;        /* Align on horizon */
+    justify-content: center;    /* Align on vertical */
+    flex-direction: row;
+}
+
+.flexbox-content{
+
+}
